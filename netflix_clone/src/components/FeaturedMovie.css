@@ -1,0 +1,68 @@
+.Featured {
+  height: 100vh;
+  justify-content: top;
+}
+.Featured--vertical {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to top, #111 20%, transparent);
+}
+.Featured--horizontal {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to right, #111 30%, transparent);
+}
+.Featured--global {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.Featured--name {
+  font-size: 2.5em;
+  margin-top: 150px;
+}
+.Featured--info {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: colum;
+  gap: 30px;
+  margin-top: 30px;
+}
+.Featured--points {
+  color: rgb(49, 139, 49);
+}
+.Featured--overview {
+  width: 30vw;
+  margin-top: 20px;
+  font-size: 1.4em;
+  color: #999;
+}
+.Featured--buttons {
+  padding-top: 30px;
+  display: flex;
+  gap: 1.2em;
+}
+button {
+    font-weight: 400;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  font-size: 1.3em;
+  height: 50px;
+  width: 150px;
+  
+}
+button:hover{
+    transform: scale(1.1);
+    transition: all  .3s;
+}
+.button--lista {
+  background-color: #333;
+  color: white;
+}
+.Featured--genres {
+  margin-top: 30px;
+  justify-content: end;
+  font-size: 1.2em;
+}

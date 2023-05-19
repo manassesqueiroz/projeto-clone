@@ -1,0 +1,33 @@
+header{
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    background-color: #111;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: 70px;
+    align-items: center;
+    background-color: transparent;  
+    transition: all ease 0.5s;  
+}
+.black{
+    background-color: #111;
+   
+   
+}
+header img{
+    margin: 0px 30px;
+
+    
+}
+.logo--netflix{
+    height: 50px;
+    width: 120px;
+  
+}
+.logo--user{
+    width: 40px;
+    height: 40px;
+}

@@ -5,15 +5,15 @@ import FeaturedMovie from './components/FeaturedMovie';
 import "./components/FeaturedMovie.css"
 import "./App.css"
 import tmdb from './tmdb';
-
-
+import Header from './components/header'
+import './components/header.css'
 
 export default () => {
      
 
   const[ movieList, setMovieList] = useState ([])
-  const [ FeatureData , setFeatureData] = useState([])
-  
+  const [ FeatureData , setFeatureData] = useState(null)
+  const [ blackheader, setBlackHeader] = useState(false) 
   
    useEffect(() => {
    const loadAll = async () =>{
@@ -25,15 +25,29 @@ export default () => {
     let chosemRandow = Math.floor(Math.random() * (myBestMovies[0].items.results.length - 1))
     let chosem = myBestMovies[0].items.results[chosemRandow]
     let chosemInfo = await tmdb.getMovieInfo(chosem.id, "movie")
- console.log(chosemInfo);
-    
+    setFeatureData(chosemInfo)  
      }
    loadAll();
   }, [])
+  useEffect(() =>{
+    const scrollListener = ()=>{
+      if(window.scrollY > 100){
+        setBlackHeader(true)
+      }
+      else{
+        setBlackHeader(false)
+      }
+    }
+    window.addEventListener('scroll', scrollListener)
+
+    return()=>{
+      window.removeEventListener('scroll', scrollListener)
+    }
+  }, [] )
 
   return(
     <div className='page'>
-
+      <Header black={blackheader}/>
       {
         FeatureData  &&
       <FeaturedMovie item={FeatureData}/>
@@ -44,6 +58,10 @@ export default () => {
           <MovieRow key={key} title={item.title} items={item.items}/>
         ))}
       </section>
+      <footer>
+        Feito com carinha gente boua 
+      
+      </footer>
     </div>
   )
 };

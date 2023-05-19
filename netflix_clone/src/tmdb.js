@@ -27,7 +27,7 @@ export default {
             {
                 slug: 'trending',
                 title: 'Recomendados para você',
-                items : await basicFatch(`/movie/550/recommendations`)
+                items : await basicFatch(`/movie/popular`)
             },
             {
                 slug: 'toprated',
